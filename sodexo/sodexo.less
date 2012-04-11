@@ -7,6 +7,15 @@
     border-radius: @radius;
 }
 
+.text-shadow(@shadow) {
+    -moz-text-shadow: @shadow;
+    -webkit-text-shadow: @shadow;
+    -khtml-text-shadow: @shadow;
+    -o-text-shadow: @shadow;
+    -ms-text-shadow: @shadow;
+    text-shadow: @shadow;
+}
+
 .background-gradient(@color1start, @color1end) {
     background: @color1end; /* old browsers */
     background: -moz-linear-gradient(top, @color1start 0%, @color1end 100%);
@@ -17,18 +26,20 @@
 
 #main {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  border: solid 1px;
+  border: solid 2px #669;
   .border-radius(20px);
-  .background-gradient(#CCF, #BBC);
+  .background-gradient(#88B, #CCF);
   padding: 0px;
   margin: 50px 100px;
   width: 800px;
   h1 {
     margin: 0px;
-    .background-gradient(#336, #225);
+    .background-gradient(#336, #669);
     .border-radius(20px 20px 0px 0px);
     padding: 10px 20px;
+    font-size: 35px;
     color: #FFF;
+    .text-shadow(0px 0px 3px rgba(255, 255, 255, 0.7));
   }
   p {
     padding: 5px 30px;
@@ -38,9 +49,12 @@
     list-style-type: none;
     li .title {
       font-weight: bold;
+      font-size: 18px;
     }
     li .properties {
+      font-weight: bold;
       font-style: italic;
+      font-size: 16px;
       float: right;
     }
   }
