@@ -1,0 +1,47 @@
+.border-radius(@radius) {
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+    -khtml-border-radius: @radius;
+    -o-border-radius: @radius;
+    -ms-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.background-gradient(@color1start, @color1end) {
+    background: @color1end; /* old browsers */
+    background: -moz-linear-gradient(top, @color1start 0%, @color1end 100%);
+    background: -o-linear-gradient(top, @color1start 0%, @color1end 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color1start), color-stop(100%,@color1end));
+    filter: e("progid:DXImageTransform.Microsoft.background-gradient( startColorstr=") @color1start e(", endColorstr=") @color1end e(",GradientType=0)");
+}
+
+#main {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  border: solid 1px;
+  .border-radius(20px);
+  .background-gradient(#CCF, #BBC);
+  padding: 0px;
+  margin: 50px 100px;
+  width: 800px;
+  h1 {
+    margin: 0px;
+    .background-gradient(#336, #225);
+    .border-radius(20px 20px 0px 0px);
+    padding: 10px 20px;
+    color: #FFF;
+  }
+  p {
+    padding: 5px 30px;
+  }
+  ul {
+    padding: 5px 30px;
+    list-style-type: none;
+    li .title {
+      font-weight: bold;
+    }
+    li .properties {
+      font-style: italic;
+      float: right;
+    }
+  }
+}

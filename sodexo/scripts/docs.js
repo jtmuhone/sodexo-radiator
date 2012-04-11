@@ -1,0 +1,8 @@
+//js sodexo/scripts/doc.js
+
+load('steal/rhino/rhino.js');
+steal("documentjs").then(function(){
+	DocumentJS('sodexo/sodexo.html', {
+		markdown : ['sodexo']
+	});
+});

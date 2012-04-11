@@ -1,0 +1,11 @@
+<div id="main">
+<h1><%= meta.ref_title %> <%= new Date(meta.generated_timestamp * 1000).format('dd.mm.yyyy') %></h1>
+<ul>
+<% for (var i = 0; i < courses.length; i++ ) { %>
+<li>
+  <span class="title"><%= courses[i].title_fi %></span>
+  <span class="properties"><%= courses[i].properties %></properties>
+</li>
+<% } %>
+</ul>
+</div>
