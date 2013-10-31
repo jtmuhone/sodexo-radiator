@@ -1,9 +1,11 @@
 steal( 'jquery/controller',
        'jquery/view/ejs',
        'jquery/controller/view')
-.then( './views/init.ejs', './views/error.ejs',
-       function($){
-
+    .then(function() {
+        steal('./views/init.ejs', './views/error.ejs');
+    })
+    .then(function($){
+        
 /**
  * @class Sodexo.Main.Init
  * @parent index
@@ -18,24 +20,27 @@ $.Controller('Sodexo.Main.Init',
 /** @Prototype */
 {
     init : function() {
-	var restaurantId = $.QueryString["restaurantId"];
-	if (restaurantId) {
-	    var date = new Date();
-	    var params = {restaurant: restaurantId,
-			  year: date.getFullYear(),
-			  month: date.getMonth() + 1,
-			  day: date.getDate()};
-	    Sodexo.Menu.findOne(params, this.callback("success"),
-				this.callback("fail"));
-	} else {
-	    this.fail({"statusText": "No restaurantId"});
-	}
+	    var restaurantId = $.QueryString["restaurantId"];
+	    if (restaurantId) {
+	        var date = new Date();
+	        var params = {restaurant: restaurantId,
+			              year: date.getFullYear(),
+			              month: date.getMonth() + 1,
+			              day: date.getDate()};
+	        Sodexo.Menu.findOne(params, this.callback("success"),
+				                this.callback("fail"));
+	    } else {
+	        this.fail({"statusText": "No restaurantId.",
+                       "link": {"href": "?restaurantId=" + config.RESTAURANT,
+                                "text": config.RESTAURANT}});
+	    }
     },
     success : function(menu) {
 	this.element.html(this.view('init', menu));
     },
     fail : function(error) {
-	this.element.html(this.view('error', {error: error.statusText}));
+	    this.element.html(this.view('error', {error: error.statusText,
+                                              errorlink: error.link}));
     }
     
 });

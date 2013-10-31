@@ -8,7 +8,7 @@ my $method = $ENV{"REQUEST_METHOD"};
 
 if ($method eq "GET") {
   my $ua = LWP::UserAgent->new;
-  my $req = HTTP::Request->new(GET => $URL . $ENV{"REQUEST_URI"});
+  my $req = HTTP::Request->new(GET => $URL . $ENV{"PATH_INFO"});
 
   my $res = $ua->request($req);
   print $res->status_line;
@@ -16,7 +16,7 @@ if ($method eq "GET") {
   print $res->content;
 
 } else {
-  print "Content-type: text/html\r\n\r\n";
+  print "Content-type: text/plain\r\n\r\n";
   print "Invalid method.";
  }
  

@@ -9,9 +9,9 @@ class SodexoHTTPRequestHandler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         path = self.path
-        if path.startswith('/ruokalistat/output/daily_json'):
+        if path.startswith('/rest'):
             connection = HTTPConnection('www.sodexo.fi')
-            connection.request('GET', path)
+            connection.request('GET', path[5:])
             response = connection.getresponse()
             content = response.read()
             self.wfile.write(content)

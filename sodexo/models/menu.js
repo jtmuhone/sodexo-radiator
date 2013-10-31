@@ -9,7 +9,7 @@ steal('jquery/model', function() {
 $.Model('Sodexo.Menu',
 /* @Static */
 {
-    findOne: "GET /ruokalistat/output/daily_json/{restaurant}/{year}/{month}/{day}/fi"
+    findOne: "GET /rest/ruokalistat/output/daily_json/{restaurant}/{year}/{month}/{day}/fi"
 },
 /* @Prototype */
 {});

@@ -1,2 +1,4 @@
 steal('jquery')
-.then('./config.js', './date.js', './querystring.js');
+    .then(function() {
+        steal('./config.js', './date.js', './querystring.js');
+    })
