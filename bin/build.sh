@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
 DIR=`dirname $0`
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    BASEDIR=$DIR
+else
+    BASEDIR=`readlink -m $DIR/..`
+fi
+
 MODULE=sodexo
 $DIR/js.sh $MODULE/scripts/build.js
 EXITCODE=$?
 
-BASEDIR=`readlink -m $DIR/..`
-BUILD_DIR=`readlink -m $BASEDIR/build`
+BUILD_DIR=$BASEDIR/build
 
 if [ $EXITCODE -eq 0 ]; then
     mkdir -p $BUILD_DIR/$MODULE
