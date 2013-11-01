@@ -9,16 +9,18 @@ Uses sodexo json api.
 Installing
 ----------
 
-git clone --recursive https://github.com/jtmuhone/sodexo-radiator.git
-cd sodexo-radiator
+`git clone --recursive https://github.com/jtmuhone/sodexo-radiator.git`
+
+`cd sodexo-radiator`
 
 Building
 --------
 
-bin/build.sh
+`bin/build.sh`
 
 Running
 -------
 
-bin/sodexo-proxy.py build
-open http://localhost:8080/sodexo
+`bin/sodexo-proxy.py build`
+
+`open http://localhost:8080/sodexo`
