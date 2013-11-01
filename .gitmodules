@@ -3,7 +3,7 @@
 	url = https://github.com/bitovi/legacy-funcunit
 [submodule "jquery"]
 	path = jquery
-	url = https://github.com/bitovi/jquerymx
+	url = https://github.com/bitovi/jquerypp
 [submodule "steal"]
 	path = steal
 	url = https://github.com/bitovi/steal
