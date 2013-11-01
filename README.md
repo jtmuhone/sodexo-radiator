@@ -23,4 +23,4 @@ Running
 
 `bin/sodexo-proxy.py build`
 
-`open http://localhost:8080/sodexo`
+open [http://localhost:8080/sodexo](http://localhost:8080/sodexo)
