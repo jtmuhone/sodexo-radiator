@@ -2,7 +2,7 @@
 
 DIR=`dirname $0`
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    BASEDIR=$DIR
+    BASEDIR=`dirname $DIR`
 else
     BASEDIR=`readlink -m $DIR/..`
 fi
