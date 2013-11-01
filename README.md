@@ -9,18 +9,19 @@ Uses sodexo json api.
 Installing
 ----------
 
-`git clone --recursive https://github.com/jtmuhone/sodexo-radiator.git`
-
-`cd sodexo-radiator`
+    git clone --recursive https://github.com/jtmuhone/sodexo-radiator.git
+    cd sodexo-radiator
 
 Building
 --------
 
-`bin/build.sh`
+    bin/build.sh
 
 Running
 -------
 
-`bin/sodexo-proxy.py build`
+    bin/sodexo-proxy.py build
 
-open [http://localhost:8080/sodexo](http://localhost:8080/sodexo)
+Open <http://localhost:8000/sodexo/?restaurantId=386> with your favourite browser.
+
+Bon Appétit!
